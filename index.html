@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <form id="loginForm">
+            <h2>Form Sign In</h2>
+            
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Masukkan Username">
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="text" id="password" placeholder="Masukkan Password">
+            </div>
+
+            <p id="error-message"></p>
+
+            <button type="submit" id="signInBtn">Sign In</button>
+        </form>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const errorElement = document.getElementById('error-message');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah reload halaman
+
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+
+            if (user.trim() === "" || pass.trim() === "") {
+                errorElement.textContent = "Username atau Password tidak boleh kosong.";
+                errorElement.style.display = "block";
+            } else {
+                errorElement.style.display = "none";
+                window.location.href = "https://www.instagram.com/jessi.nvrns?igsh=MTNxbmhvbDNqdnlrdA%3D%3D&utm_source=qr";
+            }
+        });
+    </script>
+</body>
+</html>
